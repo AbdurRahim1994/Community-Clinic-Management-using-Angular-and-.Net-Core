@@ -1,0 +1,17 @@
+<form [formGroup]="categoryForm" (submit)="insert()" class="form-container">
+  <div class="f-w">
+    Category Name
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Category Name</mat-label>
+    <input matInput formControlName="categoryName">
+    <mat-error *ngIf="f.categoryName.touched && f.categoryName.errors?.required">* Category name required</mat-error>
+    <mat-error *ngIf="f.categoryName.touched && f.categoryName.errors?.maxlength">Category name must not exceed 30 characters</mat-error>
+  </mat-form-field>
+  <div class="f-w">
+    <button type="submit" mat-raised-button color="primary" [disabled]="categoryForm.invalid"><mat-icon>save_alt</mat-icon>Save</button>
+  </div>
+  <div class="f-w">
+    <button [routerLink]="['/category']" mat-raised-button color="accent">Back</button>
+  </div>
+</form>

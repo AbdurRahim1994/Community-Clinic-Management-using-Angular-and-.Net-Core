@@ -1,0 +1,88 @@
+<form [formGroup]="followUpForm" (submit)="insert()" class="form-container">
+  <div class="f-w">
+    <h4>Create Follow Up List</h4>
+  </div>
+
+  <mat-form-field class="f-w">
+    <mat-label>Patient</mat-label>
+    <mat-select formControlName="physicalCheckUpId">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let phc of physicalCheckUp" [value]="phc.physicalCheckUpId">
+        {{phc.patientName}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="f.physicalCheckUpId.touched && f.physicalCheckUpId.errors">Patient required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Follow Up Date</mat-label>
+    <input matInput formControlName="followUpDate" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="f.followUpDate.touched && f.followUpDate.errors">Follow up date required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Check Up Date</mat-label>
+    <mat-select formControlName="checkUpDate">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let phc of physicalCheckUp" [value]="phc.physicalCheckUpId">
+        {{phc.checkUpDate}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="f.physicalCheckUpId.touched && f.physicalCheckUpId.errors">Patient required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Test Given</mat-label>
+    <mat-select formControlName="testGiven">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let phc of physicalCheckUp" [value]="phc.physicalCheckUpId">
+        {{phc.testGiven}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="f.physicalCheckUpId.touched && f.physicalCheckUpId.errors">Patient required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Previous Medicine</mat-label>
+    <mat-select formControlName="previousMedicine">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let phc of physicalCheckUp" [value]="phc.physicalCheckUpId">
+        {{phc.medicine}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="f.physicalCheckUpId.touched && f.physicalCheckUpId.errors">Patient required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Test Result</mat-label>
+    <input matInput formControlName="testResult">
+    <mat-error *ngIf="f.testResult.touched && f.testResult.errors?.required">Test result required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Observation</mat-label>
+    <input matInput formControlName="observation">
+    <mat-error *ngIf="f.observation.touched && f.observation.errors?.required">required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>New Medicine</mat-label>
+    <input matInput formControlName="updatedMedicine">
+    <mat-error *ngIf="f.updatedMedicine.touched && f.updatedMedicine.errors?.required">New Medicine required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Advice</mat-label>
+    <input matInput formControlName="advice">
+    <mat-error *ngIf="f.advice.touched && f.advice.errors?.required">required</mat-error>
+  </mat-form-field>
+
+  <div class="f-w">
+    <button type="submit" mat-raised-button color="primary"><mat-icon>save_alt</mat-icon> Save</button>
+  </div>
+  <div class="f-w">
+    <button mat-raised-button color="accent" [routerLink]="['/followUp']">Back</button>
+  </div>
+</form>

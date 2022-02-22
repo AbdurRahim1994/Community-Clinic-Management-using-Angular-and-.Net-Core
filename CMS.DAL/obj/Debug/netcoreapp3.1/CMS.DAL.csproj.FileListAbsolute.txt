@@ -1,0 +1,13 @@
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\bin\Debug\netcoreapp3.1\CMS.DAL.deps.json
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\bin\Debug\netcoreapp3.1\CMS.DAL.dll
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\bin\Debug\netcoreapp3.1\CMS.DAL.pdb
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\bin\Debug\netcoreapp3.1\CMS.Models.dll
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\bin\Debug\netcoreapp3.1\CMS.Models.pdb
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.csproj.AssemblyReference.cache
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.GeneratedMSBuildEditorConfig.editorconfig
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.AssemblyInfoInputs.cache
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.AssemblyInfo.cs
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.csproj.CoreCompileInputs.cache
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.csproj.CopyComplete
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.dll
+G:\Angular Practise\Community_Clinic_Management_System\CMS.DAL\obj\Debug\netcoreapp3.1\CMS.DAL.pdb

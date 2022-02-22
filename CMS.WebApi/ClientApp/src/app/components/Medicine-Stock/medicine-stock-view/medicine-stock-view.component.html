@@ -1,0 +1,56 @@
+<mat-card class="card-container mat-elevation-z8">
+  <mat-card-header>
+    <mat-card-title>Medicine Stock</mat-card-title>
+    <mat-card-subtitle>Stock List</mat-card-subtitle>
+    <span class="filter"></span>
+    <button mat-mini-fab color="primary" [routerLink]="['/medicine-stock-create']"><mat-icon>add</mat-icon></button>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="table-container">
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Medicine Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.medicineName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="weightContaints">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Weight Containts</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.weightContaints}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="mG_ML">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>MG_ML</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.mG_ML}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.quantity}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="available">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Availability</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.available}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{getCategoryName(element.categoryId)}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" [routerLink]="['/medicine-stock-edit', element.medicineStockId]"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="confirmDelete(element)"><mat-icon>delete</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnList"></mat-header-row>
+        <mat-row *matRowDef="let row;columns:columnList"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5,10,15,20,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,76 @@
+<mat-card class="card-container mat-elevation-z8">
+  <mat-card-header>
+    <mat-card-title>Follow Up</mat-card-title>
+    <mat-card-subtitle>List</mat-card-subtitle>
+    <span class="filter"></span>
+    <button mat-mini-fab [routerLink]="['/followUp-create']" color="primary"><mat-icon>add</mat-icon></button>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="table-container">
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="physicalCheckUp">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Patient</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{getPaitentName(element.physicalCheckUpId)}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="followUpDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Follow Up</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.followUpDate|date:'MMM dd yyyy'}}</mat-cell>
+        </ng-container>
+
+        <!--<ng-container matColumnDef="doctor">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Doctor</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{(element.doctorId)}}</mat-cell>
+        </ng-container>-->
+
+        <ng-container matColumnDef="checkUpDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Check Up</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.checkUpDate|date:'MMM dd yyyy'}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="testGiven">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Test Given</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.testGiven}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="previousMedicine">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Given Medicine</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.previousMedicine}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="testResult">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Test Result</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.testResult}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="observation">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Observation</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.observation}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="updatedMedicine">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>New Medicine</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.updatedMedicine}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="advice">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Advice</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.advice}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" [routerLink]="['/followUp-edit',element.followUpId]"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="confirmDelete(element)"><mat-icon>delete</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnList"></mat-header-row>
+        <mat-row *matRowDef="let row;columns:columnList"></mat-row>
+      </mat-table>
+    </div>
+  </mat-card-content>
+</mat-card>

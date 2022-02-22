@@ -1,0 +1,16 @@
+<form [formGroup]="categoryForm" (submit)="update()" class="form-container">
+  <div class="f-w">
+    Update Category Form
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Category Name</mat-label>
+    <input matInput formControlName="categoryName">
+    <mat-error *ngIf="f.categoryName.touched && f.categoryName.errors">Category name required</mat-error>
+  </mat-form-field>
+  <div class="f-w">
+    <button type="submit" [disabled]="categoryForm.invalid" mat-raised-button color="primary"><mat-icon>save_alt</mat-icon>Update</button>
+  </div>
+  <div class="f-w">
+    <button [routerLink]="['/category']" mat-raised-button color="accent">Back</button>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+<form [formGroup]="designationForm" (submit)="update()" class="form-container">
+  <div class="f-w">
+    Update Designation Form
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Designation Name</mat-label>
+    <input matInput formControlName="positionName">
+    <mat-error *ngIf="f.positionName.touched && f.positionName.errors">Designation name required</mat-error>
+  </mat-form-field>
+  <div class="f-w">
+    <button type="submit" [disabled]="designationForm.invalid" mat-raised-button color="primary"><mat-icon>save_alt</mat-icon>Update</button>
+  </div>
+  <div class="f-w">
+    <button [routerLink]="['/designation']" mat-raised-button color="accent">Back</button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+.card-container {
+  box-sizing: border-box;
+  margin: 25px auto 10px auto;
+  width: calc(100%-30px);
+}
+
+.table-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: calc(100%-20px);
+}
+
+.filter {
+  flex: 1 1 auto;
+}

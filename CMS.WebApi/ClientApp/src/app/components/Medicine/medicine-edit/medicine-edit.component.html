@@ -1,0 +1,47 @@
+<form [formGroup]="medicineForm" (submit)="update()" class="form-container">
+  <div class="f-w">
+    Update Medicine
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Medicine Name</mat-label>
+    <input matInput formControlName="medicineName">
+    <mat-error *ngIf="f.medicineName.touched && f.medicineName.errors?.required">Medicine name required !!</mat-error>
+    <mat-error *ngIf="f.medicineName.touched && f.medicineName.errors?.maxlength">Medicine name must not exceed 30 characters</mat-error>
+  </mat-form-field>
+  <mat-form-field class="f-w">
+    <mat-label>Weight Containts</mat-label>
+    <input matInput formControlName="weightContaints">
+    <mat-error *ngIf="f.weightContaints.touched && f.weightContaints.errors?.required">Weight containts required</mat-error>
+  </mat-form-field>
+  <div class="mat-form-field f-w">
+    <label id="example-radio-group-label">Pick a container</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label"
+                     class="example-radio-group"
+                     [(ngModel)]="suspension" formControlName="mG_ML">
+      <mat-radio-button class="example-radio-button" *ngFor="let mgml of mg_ml" [value]="mgml">
+        {{mgml}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Quantity</mat-label>
+    <input matInput formControlName="quantity" type="number">
+    <mat-error *ngIf="f.quantity.touched && f.quantity.errors?.required">Quantity required</mat-error>
+  </mat-form-field>
+  <div class="mat-form-field f-w">
+    <label id="example-radio-group-label">Availability</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label"
+                     class="example-radio-group"
+                     [(ngModel)]="availability" formControlName="available">
+      <mat-radio-button class="example-radio-button" *ngFor="let yesno of yes_no" [value]="yesno">
+        {{yesno}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="f-w">
+    <button type="submit" mat-raised-button color="primary" [disabled]="medicineForm.invalid"><mat-icon>save_alt</mat-icon> Update</button>
+  </div>
+  <div class="f-w">
+    <button type="button" [routerLink]="['/medicine']" mat-raised-button color="accent">Back</button>
+  </div>
+</form>

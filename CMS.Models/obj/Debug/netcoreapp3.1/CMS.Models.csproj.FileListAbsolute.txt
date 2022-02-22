@@ -1,0 +1,10 @@
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\bin\Debug\netcoreapp3.1\CMS.Models.deps.json
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\bin\Debug\netcoreapp3.1\CMS.Models.dll
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\bin\Debug\netcoreapp3.1\CMS.Models.pdb
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.GeneratedMSBuildEditorConfig.editorconfig
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.AssemblyInfoInputs.cache
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.AssemblyInfo.cs
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.csproj.CoreCompileInputs.cache
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.dll
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.pdb
+G:\Angular Practise\Community_Clinic_Management_System\CMS.Models\obj\Debug\netcoreapp3.1\CMS.Models.csproj.AssemblyReference.cache

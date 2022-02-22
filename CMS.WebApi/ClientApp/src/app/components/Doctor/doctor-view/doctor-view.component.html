@@ -1,0 +1,71 @@
+<mat-card class="card-container mat-elevation-z8">
+  <mat-card-header>
+    <mat-card-title>Doctor</mat-card-title>
+    <mat-card-subtitle>Doctor List</mat-card-subtitle>
+    <span class="filter"></span>
+    <button mat-mini-fab [routerLink]="['/doctor-create']" color="primary"><mat-icon>add</mat-icon></button>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="table-container">
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Doctor Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.doctorName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.address}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="contact">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Contact</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.contact}}</mat-cell>
+        </ng-container>
+
+        <!--<ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+        </ng-container>-->
+
+        <ng-container matColumnDef="appointed">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Appointed</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.appointed|date:'MMM dd yyyy'}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="designation">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Designation</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{getDesignationName(element.designationId)}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="degree">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Degree</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.degree}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="specialization">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Specialization</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.specialization}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="picture">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Picture</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <img class="row-image" src="http://localhost:27944//Images/{{element.picture}}" height="40" width="40" />
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" [routerLink]="['/doctor-edit',element.doctorId]"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="confirmDelete(element)"><mat-icon>delete</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnList"></mat-header-row>
+        <mat-row *matRowDef="let row;columns: columnList"></mat-row>
+      </mat-table>
+    </div>
+  </mat-card-content>
+</mat-card>

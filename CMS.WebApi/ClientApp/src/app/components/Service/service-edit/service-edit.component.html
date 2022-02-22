@@ -1,0 +1,32 @@
+<form [formGroup]="serviceForm" (submit)="update()" class="form-container">
+  <div class="f-w">
+    Update Service
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Service Name</mat-label>
+    <input matInput formControlName="serviceName">
+    <mat-error *ngIf="f.serviceName.touched && f.serviceName.errors?.required">Service name required !!</mat-error>
+    <mat-error *ngIf="f.serviceName.touched && f.serviceName.errors?.maxlength">Service name must not exceed 30 characters</mat-error>
+  </mat-form-field>
+  <mat-form-field class="f-w">
+    <mat-label>Symptoms</mat-label>
+    <input matInput formControlName="symptoms">
+    <mat-error *ngIf="f.symptoms.touched && f.symptoms.errors?.required">Sysmptoms required</mat-error>
+  </mat-form-field>
+  <mat-form-field class="f-w">
+    <mat-label>Treatment Procedure</mat-label>
+    <input matInput formControlName="treatmentProcedure">
+    <mat-error *ngIf="f.treatmentProcedure.touched && f.treatmentProcedure.errors?.required">Treatment Procedure required</mat-error>
+  </mat-form-field>
+  <mat-form-field class="f-w">
+    <mat-label>Prefered Medicine</mat-label>
+    <input matInput formControlName="preferedMedicines">
+    <mat-error *ngIf="f.preferedMedicines.touched && f.preferedMedicines.errors?.required">Prefered Medicine required</mat-error>
+  </mat-form-field>
+  <div class="f-w">
+    <button type="submit" mat-raised-button color="primary" [disabled]="serviceForm.invalid"><mat-icon>save_alt</mat-icon> Save</button>
+  </div>
+  <div class="f-w">
+    <button type="button" [routerLink]="['/service']" mat-raised-button color="accent">Back</button>
+  </div>
+</form>

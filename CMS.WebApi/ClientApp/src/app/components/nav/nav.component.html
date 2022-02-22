@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInviewPort [opened]="false">
+    <mat-toolbar>Community Clinic</mat-toolbar>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/home']"><mat-icon>home</mat-icon>Home</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/designation']"><mat-icon>closed_caption</mat-icon>Designation</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/medicine']"><mat-icon>portrait</mat-icon>Medicine</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/service']"><mat-icon>portrait</mat-icon>Service</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/medicine-stock']"><mat-icon>portrait</mat-icon>Medicine Stock</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/patient']"><mat-icon>portrait</mat-icon>Patient</a>
+      <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/doctor']"><mat-icon>portrait</mat-icon>Doctor</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/physicalCheckUp']"><mat-icon>portrait</mat-icon>Check Up</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/followUp']"><mat-icon>portrait</mat-icon>Follow Up</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/doctorService']"><mat-icon>portrait</mat-icon>Doctor Service</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category']"><mat-icon>portrait</mat-icon>Category</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="top-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

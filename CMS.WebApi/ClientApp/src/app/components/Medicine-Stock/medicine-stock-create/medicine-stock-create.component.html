@@ -1,0 +1,60 @@
+<form [formGroup]="medicineStockForm" (submit)="insert()" class="form-container">
+  <div class="f-w">
+    <h4>Add Medicine Stock</h4>
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Medicine Name</mat-label>
+    <input matInput formControlName="medicineName">
+    <mat-error *ngIf="f.medicineName.touched && f.medicineName.errors?.required">Medicine Name Required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="f-w">
+    <mat-label>Weight Containts</mat-label>
+    <input matInput formControlName="weightContaints">
+    <mat-error *ngIf="f.weightContaints.touched && f.weightContaints.errors?.required">Weight Containts Required</mat-error>
+  </mat-form-field>
+
+  <div class="mat-form-field f-w">
+    <label id="example-radio-group-label">Pick a container</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label"
+                     class="example-radio-group"
+                     [(ngModel)]="suspension" formControlName="mG_ML">
+      <mat-radio-button class="example-radio-button" *ngFor="let mgml of mg_ml" [value]="mgml">
+        {{mgml}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <mat-form-field class="f-w">
+    <mat-label>Quantity</mat-label>
+    <input matInput formControlName="quantity">
+    <mat-error *ngIf="f.quantity.touched && f.quantity.errors?.required">Quantity Required</mat-error>
+  </mat-form-field>
+
+  <div class="mat-form-field f-w">
+    <label id="example-radio-group-label">Availability</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label"
+                     class="example-radio-group"
+                     [(ngModel)]="availability" formControlName="available">
+      <mat-radio-button class="example-radio-button" *ngFor="let yesno of yes_no" [value]="yesno">
+        {{yesno}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <mat-form-field class="f-w">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="categoryId">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let c of categories" [value]="c.categoryId">{{c.categoryName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="f-w">
+    <button mat-raised-button color="primary" [disabled]="medicineStockForm.invalid" type="submit"><mat-icon>save_alt</mat-icon>Save</button>
+  </div>
+
+  <div class="f-w">
+    <button mat-raised-button color="accent" [routerLink]="['/medicine-stock']">Back</button>
+  </div>
+</form>

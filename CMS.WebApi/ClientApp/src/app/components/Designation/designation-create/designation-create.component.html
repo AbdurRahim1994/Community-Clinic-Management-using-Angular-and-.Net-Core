@@ -1,0 +1,17 @@
+<form [formGroup]="designationForm" (submit)="insert()" class="form-container">
+  <div class="f-w">
+    Designation Name
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Designation Name</mat-label>
+    <input matInput formControlName="positionName">
+    <mat-error *ngIf="f.positionName.touched && f.positionName.errors?.required">* Designation name required</mat-error>
+    <mat-error *ngIf="f.positionName.touched && f.positionName.errors?.maxlength">Designation name must not exceed 30 characters</mat-error>
+  </mat-form-field>
+  <div class="f-w">
+    <button type="submit" mat-raised-button color="primary" [disabled]="designationForm.invalid"><mat-icon>save_alt</mat-icon>Save</button>
+  </div>
+  <div class="f-w">
+    <button [routerLink]="['/designation']" mat-raised-button color="accent">Back</button>
+  </div>
+</form>
